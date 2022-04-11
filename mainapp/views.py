@@ -13,6 +13,8 @@ def main(request):
     content = {"title": title, "products": products, "media_url": settings.MEDIA_URL}
     return render(request, "mainapp/index.html", content)
 
+    content = {"title": title, "products": products, "media_url": settings.MEDIA_URL}
+    return render(request, "mainapp/index.html", content)
 
 def products(request, pk=None):
     title = "продукты"
@@ -26,6 +28,7 @@ def products(request, pk=None):
     }
     if pk:
         print(f"User select category: {pk}")
+
     return render(request, "mainapp/products.html", content)
 
 
@@ -35,3 +38,4 @@ def contact(request):
     locations = Contact.objects.all()
     content = {"title": title, "visit_date": visit_date, "locations": locations}
     return render(request, "mainapp/contact.html", content)
+
